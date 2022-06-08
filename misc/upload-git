@@ -42,7 +42,7 @@ checkgit() {
 prepare() {
   # Update data files
   rm -f "$LACELLS_GIT_DIR/lacells-*"
-  cp "$LACELLS_DIR"/lacells-* "$LACELLS_GIT_DIR/"
+  cp --reflink=auto "$LACELLS_DIR"/lacells-* "$LACELLS_GIT_DIR/"
 
   # Github doesn't like big files, split them.
   # TODO use find-command instead of harded list here
@@ -59,7 +59,7 @@ prepare() {
   addfilescsv "$LACELLS_GIT_DIR" "lacells-countries.csv" "lacells-mcc_"
 
   # Add website files
-  cp "$PREFIX"/misc/html/* "$LACELLS_GIT_DIR/"
+  cp --reflink=auto "$PREFIX"/misc/html/* "$LACELLS_GIT_DIR/"
 }
 
 # Commit and push changes
