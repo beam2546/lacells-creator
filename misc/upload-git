@@ -45,16 +45,9 @@ prepare() {
   cp --reflink=auto "$LACELLS_DIR"/lacells-* "$LACELLS_GIT_DIR/"
 
   # Github doesn't like big files, split them.
-  # TODO use find-command instead of harded list here
-  splitcsv "$LACELLS_GIT_DIR/lacells-mcc_208"
-  splitcsv "$LACELLS_GIT_DIR/lacells-mcc_234"
-  splitcsv "$LACELLS_GIT_DIR/lacells-mcc_250"
-  splitcsv "$LACELLS_GIT_DIR/lacells-mcc_262"
-  splitcsv "$LACELLS_GIT_DIR/lacells-mcc_310"
-  splitcsv "$LACELLS_GIT_DIR/lacells-mcc_404"
-  splitcsv "$LACELLS_GIT_DIR/lacells-mcc_440"
-  splitcsv "$LACELLS_GIT_DIR/lacells-mcc_724"
-
+  for F in $(find "$LACELLS_GIT_DIR" -type f -size +49999999c -name "lacells-mcc_???.csv" ); do
+     splitcsv "${F%.*}"
+  done
   # Add filenames to lacells-countries.csv
   addfilescsv "$LACELLS_GIT_DIR" "lacells-countries.csv" "lacells-mcc_"
 
