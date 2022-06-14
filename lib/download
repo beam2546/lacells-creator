@@ -38,9 +38,9 @@ download_opencellid() {
   msg 'Downloading cell tower data from OpenCellID'
 	if [ ! "${API_KEY}" ]; then
 		echo "Please set API_KEY to download OpenCellID data" 1>&2
-		exit
+	else
+		_download_from opencellid "https://opencellid.org/ocid/downloads?token=${API_KEY}&type=full&file=cell_towers.csv.gz"
 	fi
-	_download_from opencellid "https://opencellid.org/ocid/downloads?token=${API_KEY}&type=full&file=cell_towers.csv.gz"
 }
 
 download() {
