@@ -15,17 +15,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Download and split
-        env:
-          API_KEY: ${{ secrets.API_KEY }}
+        # env:
+        #   API_KEY: ${{ secrets.API_KEY }}
         run: ./lacells-creator -d -i -m -e -q
       - name: Prepare website
         run: |
           mkdir -p lacells.git
           cd lacells.git
-          git init -q
-          git config user.email lacells
-          git config user.name lacells
-          git remote add origin git@github.com:beam2546/lacells.git
+          git clone --no-checkout https://github.com/beam2546/lacells.git
           git checkout -b main
       - name: Publish website
         env:
