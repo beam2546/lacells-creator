@@ -24,7 +24,7 @@ jobs:
           git init -q
           git config user.email lacells
           git config user.name lacells
-          git remote add origin git@github.com:wvengen/lacells.git
+          git remote add origin git@github.com:beam2546/lacells.git
       - name: Publish website
         env:
           LACELLS_GIT_SSH_KEY: ${{ secrets.LACELLS_GIT_SSH_KEY }}
