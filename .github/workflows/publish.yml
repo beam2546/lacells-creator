@@ -1,7 +1,5 @@
 name: Build and publish lacells website
 on:
-  push:
-    branches: [ master ]
   schedule:
     - cron: 0 2 * * *
   workflow_dispatch:
@@ -22,7 +20,10 @@ jobs:
         run: |
           mkdir -p lacells.git
           cd lacells.git
-          git clone --no-checkout https://github.com/beam2546/lacells.git .
+          git init -q
+          git config user.email lacells
+          git config user.name lacells
+          git remote add origin git@github.com:beam2546/lacells.git
           git checkout -b main
       - name: Publish website
         env:
