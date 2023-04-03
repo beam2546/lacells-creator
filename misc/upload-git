@@ -53,6 +53,12 @@ prepare() {
 
   # # Add website files
   # cp --reflink=auto "$PREFIX"/misc/html/* "$LACELLS_GIT_DIR/"
+
+  # Add README
+  cp --reflink=auto "$PREFIX"/misc/README.md "$LACELLS_GIT_DIR/"
+
+  # Add LICENSE
+  cp --reflink=auto "$PREFIX"/LICENSE "$LACELLS_GIT_DIR/"
 }
 
 # Commit and push changes
