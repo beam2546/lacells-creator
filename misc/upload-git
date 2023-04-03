@@ -59,7 +59,7 @@ prepare() {
 upload() {
   dogit add -A && \
   dogit commit -m lacells-update && \
-  dogit push -f -q $GIT_PUSH_ARGS
+  dogit push -f $GIT_PUSH_ARGS
 }
 
 # Remove lines <2 points, because we need to stay <1GB

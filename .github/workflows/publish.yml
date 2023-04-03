@@ -25,10 +25,11 @@ jobs:
           git config user.email lacells
           git config user.name lacells
           git remote add origin git@github.com:beam2546/lacells.git
+          git checkout -b main
       - name: Publish website
         env:
           LACELLS_GIT_SSH_KEY: ${{ secrets.LACELLS_GIT_SSH_KEY }}
         run: |
           mkdir -p ~/.ssh && chmod 0700 ~/.ssh
           echo "$LACELLS_GIT_SSH_KEY" >~/.ssh/id_rsa && chmod 0600 ~/.ssh/id_rsa
-          GIT_PUSH_ARGS="--set-upstream origin main" ./misc/upload-git
+          GIT_PUSH_ARGS="origin main" ./misc/upload-git
