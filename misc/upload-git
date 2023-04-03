@@ -51,15 +51,15 @@ prepare() {
   # Add filenames to lacells-countries.csv
   addfilescsv "$LACELLS_GIT_DIR" "lacells-countries.csv" "lacells-mcc_"
 
-  # Add website files
-  cp --reflink=auto "$PREFIX"/misc/html/* "$LACELLS_GIT_DIR/"
+  # # Add website files
+  # cp --reflink=auto "$PREFIX"/misc/html/* "$LACELLS_GIT_DIR/"
 }
 
 # Commit and push changes
 upload() {
   dogit add -A && \
   dogit commit -m lacells-update && \
-  dogit push -f -q $GIT_PUSH_ARGS 2>&1 | grep -v 'remote: warning: \(GH001\|See\|.*this is larger than\)' 1>&2
+  dogit push -f -q $GIT_PUSH_ARGS
 }
 
 # Remove lines <2 points, because we need to stay <1GB
