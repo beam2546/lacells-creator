@@ -22,7 +22,7 @@ jobs:
         run: |
           mkdir -p lacells.git
           cd lacells.git
-          git clone --no-checkout https://github.com/beam2546/lacells.git
+          git clone --no-checkout https://github.com/beam2546/lacells.git .
           git checkout -b main
       - name: Publish website
         env:
