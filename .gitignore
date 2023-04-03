@@ -1,9 +1,0 @@
-.DS_Store
-*.bak
-/lacells.db
-/towers_*.csv
-/towers_*.csv.gz
-/lacells/
-/lacells.git/
-/creator.cfg
-/gen_lacells_conf
