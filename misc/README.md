@@ -18,6 +18,6 @@ This data is provided under the [Creative Commons Attribution-ShareAlike 4.0 Int
 
 The data is aggregated from both [Mozilla Location Service](https://location.services.mozilla.com/) and [OpenCellID](https://opencellid.org/). The license for these datasets are [public domain](https://creativecommons.org/publicdomain/zero/1.0/) and [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) respectively. By releasing this dataset under the terms of the CC-BY-SA 4.0 license, the terms of both source licenses are met.
 
-The tool that being used to generated this datbase is the [forked version](https://github.com/beam2546/lacells-creator) of lacells-creator. The license for these tool is [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.html).
+The tool that being used to generated this database is the [forked version](https://github.com/beam2546/lacells-creator) of lacells-creator. The license for these tool is [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.html).
 
-Many of the wordings and the structure of this README file is taken from [wvengen's lacells](https://github.com/wvengen/lacells) repository.
+Many of the wordings and the structure of this README file is taken from [wvengen's lacells repository](https://github.com/wvengen/lacells).
